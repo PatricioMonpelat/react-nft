@@ -29,8 +29,12 @@ const Header = () => {
 
       <div className="headerActions">
         <div className="themeSwitchContainer">
-            <img src={themeSwitchIcon}></img>
+          <img src={themeSwitchIcon}></img>
         </div>
+      </div>
+
+      <div className="loginButton"> GET IN
+
       </div>
     </div>
   );
