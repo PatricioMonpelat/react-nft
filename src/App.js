@@ -2,9 +2,23 @@ import './App.css';
 import CollectionCard from './components/CollectionCard';
 import Header from "./components/Header";
 import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 
 function App() {
+  const [punkListDate, setPunkListData] = useState([])
+
+  useEffect(() => {
+    const getMyfNfts = async() => {
+      const openseaData = await axios.get(
+        'https://testnets-api.opensea.io/assets?asset_contract_address=0xC77612e038dB505203b282574639bDB72a028482&order_direction=asc'
+        )
+        console.log(openseaData.data.assets)
+        setPunkListData(openseaData.data.assets)
+    }
+    return getMyfNfts()
+  }, [])
+
   return (
     <div className='app'>
       <Header />
