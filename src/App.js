@@ -1,6 +1,7 @@
 import './App.css';
 import CollectionCard from './components/CollectionCard';
 import Header from "./components/Header";
+import { useState, useEffect } from 'react';
 
 
 function App() {
