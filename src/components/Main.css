@@ -16,22 +16,23 @@
 }
 
 .punkContainer {
-  border-radius: 2opx;
+  border-radius: 20px;
   overflow: hidden;
   display: flex;
   margin-right: 20px;
 }
 
+.selectedPunk {
+    object-fit: contain;
+    max-width: min(30vw, 40vh);
+    max-height: 30vw;
+}
 .punkDetails {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   flex: 0.75;
-}
-.selectedPunk {
-    object-fit: contain;
-    max-width: min(30vw,40vh);
-    max-height: 30vw;
+  overflow: hidden;
 }
 .title {
     font-size: 96px;
