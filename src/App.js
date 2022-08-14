@@ -1,9 +1,10 @@
 import "./App.css";
 import Header from "./components/Header";
 import { useState, useEffect } from "react";
-import axios from "axios";
+// import axios from "axios";
 import Punklist from "./components/Punklist";
 import Main from "./components/Main";
+import PunkJson from './components/PunkJson.json';
 
 
 function App() {
@@ -14,11 +15,17 @@ function App() {
 
   useEffect(() => {  
     const getMyfNfts = async () => {
-      const openseaData = await axios.get(
-        "https://testnets-api.opensea.io/assets?asset_contract_address=0xC77612e038dB505203b282574639bDB72a028482&order_direction=asc"
-      );
+
+      // AXIOS CALL
+
+      // const openseaData = await axios.get(
+      //   "https://testnets-api.opensea.io/assets?asset_contract_address=0xC77612e038dB505203b282574639bDB72a028482&order_direction=asc"
+      // );
       // console.log(openseaData.data.assets);
-      setPunkListData(openseaData.data.assets);
+
+      const openseaData = PunkJson;
+      
+      setPunkListData(openseaData.assets);
     };
     getMyfNfts()
   }, []);
